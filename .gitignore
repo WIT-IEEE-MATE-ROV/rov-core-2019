@@ -1,3 +1,11 @@
+# Ignore compiled files
+rovmode
+rovtest
+
+# Ignore operating system stuff
+*.swp
+
+## Standard C .gitignore \/
 # Prerequisites
 *.d
 
