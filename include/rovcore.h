@@ -12,5 +12,6 @@ int SETUP_STATUS_INT;
 
 void rov_error(int);
 int testfunction(void);
+void stop_rovcore();
 
 #endif

@@ -16,3 +16,7 @@ int testfunction(void) {
     printf("This is a test function!");
     return 0;
 }
+
+void stop_rovcore() {
+    //TODO
+}

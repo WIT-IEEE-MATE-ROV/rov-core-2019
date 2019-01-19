@@ -1,10 +1,15 @@
 #include "roverr.h"
-#include "../rovlog/rovlog.h"
+#include "../../rovlog/rovlog.h"
+#include "rovcore.h"
 
 int abort_children() {
+    //TODO
+    return 0;
 }
 
 int start_children() {
+    //TODO
+    return 0;
 }
 
 int safe_shutdown() {

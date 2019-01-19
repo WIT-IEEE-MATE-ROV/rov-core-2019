@@ -1,5 +1,5 @@
 rov :
-	gcc include/rovcore.c include/rovsim.c rovmain.c -o rovmain -g -Wall -Wextra -L. -Iinclude/
+	gcc rov-util.c rovmain.c -o rovmain -g -Wall -Wextra -L. -I.
 
 test : 
 	gcc rovtest.c -o rovtest -g -Wall -Wextra
