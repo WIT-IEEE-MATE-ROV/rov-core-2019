@@ -10,11 +10,10 @@ clean :
 	rm -f ./rovmain
 
 rovmode :
-	gcc include/rovcore.c include/rovonly.c rovmain.c -o rovmain_rovmode -DDEF=ROVMODE -g -Wall -Wextra -L.
+	gcc include/rovcore.c include/rovonly.c rovmain.c -o rovmain_rovmode -DDEF=ROVMODE -g -Wall -Wextra -L. -march=armv6
 
 rovmodetest: 
 	gcc include/rovcore.c include/rovonly.c rovmain.c -o rovmain -g -Wall -Wextra -L. -Iinclude/ -DROVMODE
-	Done.
 
 upload :
 	make rovmode
