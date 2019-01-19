@@ -1,17 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <math.h>
-
-#include "include/rovcore.h"
+#include "./rov-util.h"
 
 int main(const int argc, const char *argv[]) {
-    if( setup() != 0 ) {
-        printf("Setup failed!\n");
-        rov_error(SETUP_STATUS_INT);
-    }
+    //TODO: Happy setup things
 
-    testfunction();
+    //TODO: Spawn all the children
 
-    return 0;
+    //TODO: Check up on all the children
+    start_child("");
 }
-
