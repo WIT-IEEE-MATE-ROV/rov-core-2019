@@ -20,6 +20,7 @@ int SETUP_STATUS_INT;
 
 void safe_shutdown(void);
 short start_child(char *);
+short start_child_args(char*, char*);
 short stop_child(short);
 short checkup_child(short);
 

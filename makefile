@@ -1,23 +1,15 @@
-rov :
-	gcc rov-util.c rovmain.c -o rovmain -g -Wall -Wextra -L. -I.
+objects = ../comms/nugget-api.o ../rov-core/rov-util.o ../rovlog/rovlog.o 
+objects2 = ../comms/nugget-api.o ../rovlog/rovlog.o 
+stdflag = -g -Wall -Wextra -L. -I. -lm -Wl,-unresolved-symbols=ignore-in-shared-libs
 
-test : 
-	gcc rovtest.c -o rovtest -g -Wall -Wextra
-	./rovtest
+master :
+	gcc rovmain.c -o rovmain $(objects) $(stdflag)
 
-clean :
-	rm -f ./rovtest
-	rm -f ./rovmain
+rovutil :
+	gcc -c rov-util.c $(objects)  $(stdflag)
 
-rovmode :
-	gcc include/rovcore.c include/rovonly.c rovmain.c -o rovmain_rovmode -DDEF=ROVMODE -g -Wall -Wextra -L. -march=armv6
-
-rovmodetest: 
-	gcc include/rovcore.c include/rovonly.c rovmain.c -o rovmain -g -Wall -Wextra -L. -Iinclude/ -DROVMODE
-
-upload :
-	make rovmode
-	scp ./rovmain-rovmode nugget@spacenugget.local:/opt/rovmain
-	ssh nugget@spacenugget.local 'systemctl restart nugget'
-
-
+spawntest :
+	gcc test-child.c rov-util.c -o test-child $(objects2) $(stdflag)
+	gcc test-parent.c rov-util.c -o test-parent $(objects2) $(stdflag)
+	
+	./test-parent
