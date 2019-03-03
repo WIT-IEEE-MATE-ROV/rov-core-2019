@@ -1,6 +1,9 @@
 # Ignore compiled files
 rovmode
 rovtest
+rovmain
+test-child
+test-parent
 
 # Ignore operating system stuff
 *.swp
