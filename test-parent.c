@@ -4,6 +4,6 @@
 int main(void)
 {
     start_child("./test-child");
-   // start_child("./test-child second arg");
+     start_child("./test-child second arg");
     return 0;
 }
