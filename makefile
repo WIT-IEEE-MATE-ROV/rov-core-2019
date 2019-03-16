@@ -6,7 +6,7 @@ master :
 	gcc rovmain.c -o rovmain $(objects) $(stdflag)
 
 rovutil :
-	gcc -c rov-util.c $(objects)  $(stdflag)
+	gcc -c rov-util.c $(objects2)  $(stdflag)
 
 spawntest :
 	gcc test-child.c rov-util.c -o test-child $(objects2) $(stdflag)
